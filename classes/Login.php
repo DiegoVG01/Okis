@@ -1,9 +1,6 @@
 <?php
 
-/**
- * Class login
- * handles the user's login and logout process
- */
+
 class Login
 {
     /**
@@ -78,14 +75,13 @@ class Login
                     // get result row (as an object)
                     $result_row = $result_of_login_check->fetch_object();
 
-                    // using PHP 5.5's password_verify() function to check if the provided password fits
-                    // the hash of that user's password
-                    if (password_verify($_POST['user_password'], $result_row->user_password_hash)) {
+                    // check if the provided password matches the stored password
+                    if ($_POST['user_password'] === $result_row->user_password_hash) {
 
                         // write user data into PHP SESSION (a file on your server)
                         $_SESSION['user_id'] = $result_row->user_id;
-						$_SESSION['firstname'] = $result_row->firstname;
-						$_SESSION['user_name'] = $result_row->user_name;
+                        $_SESSION['firstname'] = $result_row->firstname;
+                        $_SESSION['user_name'] = $result_row->user_name;
                         $_SESSION['user_email'] = $result_row->user_email;
                         $_SESSION['user_login_status'] = 1;
 
@@ -109,9 +105,8 @@ class Login
         // delete the session of the user
         $_SESSION = array();
         session_destroy();
-        // return a little feeedback message
+        // return a little feedback message
         $this->messages[] = "Has sido desconectado.";
-
     }
 
     /**
@@ -127,3 +122,4 @@ class Login
         return false;
     }
 }
+?>

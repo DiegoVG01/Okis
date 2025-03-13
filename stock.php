@@ -1,9 +1,5 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
+	
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: login.php");
@@ -15,7 +11,7 @@
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
 	
 	$active_productos="active";
-	$title="Inventario | Simple Stock";
+	$title="Inventario | Okis";
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -15,7 +15,7 @@
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
 	
 	$active_categoria="active";
-	$title="Categorías | Simple Invoice";
+	$title="Categorías | Okis";
 ?>
 <!DOCTYPE html>
 <html lang="en">

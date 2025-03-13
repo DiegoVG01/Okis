@@ -1,9 +1,5 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
+
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: login.php");
@@ -113,7 +109,7 @@
                       <span class="current-stock"> Precio venta  </span>
                     </div>
 					<div class="col-sm-12">
-                      <span class="item-price">$ <?php echo number_format($row['precio_producto'],2);?></span>
+                      <span class="item-price">S/ <?php echo number_format($row['precio_producto'],2);?></span>
                     </div>
 					
                     <div class="col-sm-12 margin-btm-10">
